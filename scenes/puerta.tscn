@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8pf7d7qlt20d"]
+
+[ext_resource type="Script" uid="uid://h0gs6gwn4ltq" path="res://scripts/puerta.gd" id="1_gjhiy"]
+[ext_resource type="Texture2D" uid="uid://ci1c0ejq0d1sb" path="res://assets/sprites/industrial.v1.png" id="2_204ua"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sl7q"]
+size = Vector2(30, 36)
+
+[node name="Puerta" type="Area2D"]
+position = Vector2(-16, -24)
+script = ExtResource("1_gjhiy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_3sl7q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_204ua")
+region_enabled = true
+region_rect = Rect2(48, 32, 32, 37)
+
+[node name="FondoColor" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -13.0
+offset_top = -16.0
+offset_right = 13.0
+offset_bottom = 18.0
+color = Color(1, 0.266667, 0.266667, 1)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://mj48jq6vjr5i"]
 
-[ext_resource type="Script" uid="uid://tiokw3wvpcit" path="res://scenes/enemigo.gd" id="1_hlx46"]
+[ext_resource type="Script" uid="uid://tiokw3wvpcit" path="res://scripts/enemigo.gd" id="1_hlx46"]
 [ext_resource type="Texture2D" uid="uid://ci1c0ejq0d1sb" path="res://assets/sprites/industrial.v1.png" id="2_1yqjy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pe0jf"]
@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5jixv"]
-size = Vector2(8, 16)
+size = Vector2(12, 17)
 
 [node name="Enemigo" type="CharacterBody2D"]
 script = ExtResource("1_hlx46")
@@ -56,10 +56,11 @@ script = ExtResource("1_hlx46")
 sprite_frames = SubResource("SpriteFrames_0chwd")
 animation = &"walk"
 autoplay = "walk"
-frame = 3
-frame_progress = 0.375056
+frame = 1
+frame_progress = 0.398044
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_5jixv")
 
 [node name="RayCastDerecha" type="RayCast2D" parent="."]

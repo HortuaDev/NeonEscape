@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbcbsf1kh85uv"]
+
+[ext_resource type="Script" uid="uid://dw1b66d5mu1h1" path="res://scripts/item.gd" id="1_s8enn"]
+[ext_resource type="Texture2D" uid="uid://ci1c0ejq0d1sb" path="res://assets/sprites/industrial.v1.png" id="2_6muww"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vljjh"]
+atlas = ExtResource("2_6muww")
+region = Rect2(144, 160, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ro5b8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vljjh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d265e"]
+radius = 4.0
+
+[node name="Item" type="Area2D" groups=["items"]]
+script = ExtResource("1_s8enn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ro5b8")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d265e")

@@ -1,30 +1,40 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgbxgfqyodg0"]
+[gd_scene load_steps=13 format=3 uid="uid://bgbxgfqyodg0"]
 
 [ext_resource type="Texture2D" uid="uid://di26vagfutqke" path="res://assets/sprites/fondo.png" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://wfb6tn6tcwa5" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://t1ta1jtqbt3h" path="res://scripts/main.gd" id="1_tipki"]
+[ext_resource type="Script" uid="uid://dp2qoag68dpie" path="res://scripts/zona_muerta.gd" id="3_85g3d"]
 [ext_resource type="Texture2D" uid="uid://ci1c0ejq0d1sb" path="res://assets/sprites/industrial.v1.png" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://mj48jq6vjr5i" path="res://scenes/enemigo.tscn" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://cro5cy38clin0" path="res://scripts/hud.gd" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://dbcbsf1kh85uv" path="res://scenes/item.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://b8pf7d7qlt20d" path="res://scenes/puerta.tscn" id="7_o6xl0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
-size = Vector2(1140, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]
+size = Vector2(1152, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
 size = Vector2(148, 21.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85g3d"]
+size = Vector2(1, 644)
+
 [node name="main" type="Node2D"]
+script = ExtResource("1_tipki")
+
+[node name="ZonaMuerta" type="Area2D" parent="."]
+position = Vector2(-4, 307)
+script = ExtResource("3_85g3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaMuerta"]
+position = Vector2(580, 339)
+shape = SubResource("RectangleShape2D_tipki")
 
 [node name="Fondo" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(576, 322)
-scale = Vector2(0.596354, 0.597222)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("1_0wfyh")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 300)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(574, 348)
-shape = SubResource("RectangleShape2D_0wfyh")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
 position = Vector2(46, 585)
@@ -443,3 +453,108 @@ position = Vector2(1032, 163)
 
 [node name="Enemigo8" parent="." instance=ExtResource("4_jyhfs")]
 position = Vector2(1114, 459)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("5_tbgi4")
+
+[node name="LabelPuntos" type="Label" parent="HUD"]
+offset_left = 10.0
+offset_top = 35.0
+offset_right = 51.0
+offset_bottom = 58.0
+text = "0 PTS"
+
+[node name="LabelVidas" type="Label" parent="HUD"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 70.0
+offset_bottom = 33.0
+text = "Vidas: 3"
+
+[node name="Item" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(119, 587)
+
+[node name="Item2" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(191, 558)
+
+[node name="Item3" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(294, 558)
+
+[node name="Item4" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(103, 526)
+
+[node name="Item5" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(25, 447)
+
+[node name="Item6" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(184, 406)
+
+[node name="Item7" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(284, 402)
+
+[node name="Item8" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(372, 458)
+
+[node name="Item9" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(420, 397)
+
+[node name="Item10" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(541, 400)
+
+[node name="Item11" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(663, 301)
+
+[node name="Item12" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(414, 289)
+
+[node name="Item13" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(49, 208)
+
+[node name="Item14" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(109, 178)
+
+[node name="Item15" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(325, 144)
+
+[node name="Item16" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(427, 87)
+
+[node name="Item17" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(453, 86)
+
+[node name="Item18" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(476, 84)
+
+[node name="Item19" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(968, 155)
+
+[node name="Item20" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(1077, 156)
+
+[node name="Item21" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(896, 243)
+
+[node name="Item22" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(999, 309)
+
+[node name="Item23" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(1074, 449)
+
+[node name="Item24" parent="." instance=ExtResource("6_tefeu")]
+position = Vector2(937, 518)
+
+[node name="Puerta" parent="." instance=ExtResource("7_o6xl0")]
+position = Vector2(1126, 581)
+
+[node name="ParedIzquierda" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedIzquierda"]
+position = Vector2(-0.5, 323)
+shape = SubResource("RectangleShape2D_85g3d")
+
+[node name="ParedDerecha" type="StaticBody2D" parent="."]
+position = Vector2(1153, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParedDerecha"]
+position = Vector2(-0.5, 323)
+shape = SubResource("RectangleShape2D_85g3d")
