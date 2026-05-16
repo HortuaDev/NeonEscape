@@ -1,18 +1,445 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgbxgfqyodg0"]
+[gd_scene load_steps=7 format=3 uid="uid://bgbxgfqyodg0"]
 
+[ext_resource type="Texture2D" uid="uid://di26vagfutqke" path="res://assets/sprites/fondo.png" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://wfb6tn6tcwa5" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://ci1c0ejq0d1sb" path="res://assets/sprites/industrial.v1.png" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://mj48jq6vjr5i" path="res://scenes/enemigo.tscn" id="4_jyhfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
-size = Vector2(1000, 20)
+size = Vector2(1140, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
+size = Vector2(148, 21.5)
 
 [node name="main" type="Node2D"]
+
+[node name="Fondo" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(576, 322)
+scale = Vector2(0.596354, 0.597222)
+texture = ExtResource("1_0wfyh")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(215, -296)
+position = Vector2(574, 348)
 shape = SubResource("RectangleShape2D_0wfyh")
 
 [node name="Player" parent="." instance=ExtResource("1_o5qli")]
-position = Vector2(0, -87)
+position = Vector2(46, 585)
+
+[node name="plataforma1" type="StaticBody2D" parent="."]
+position = Vector2(0, -7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma1"]
+position = Vector2(77, 622)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma1/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma2" type="StaticBody2D" parent="."]
+position = Vector2(167, -38)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma2"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma2/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma3" type="StaticBody2D" parent="."]
+position = Vector2(337, -70)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma3"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma3/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma4" type="StaticBody2D" parent="."]
+position = Vector2(163, -110)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma4"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma4/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma5" type="StaticBody2D" parent="."]
+position = Vector2(3, -147)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma5"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma5/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma6" type="StaticBody2D" parent="."]
+position = Vector2(160, -191)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma6"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma6/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma7" type="StaticBody2D" parent="."]
+position = Vector2(406, -195)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma7"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma7/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma9" type="StaticBody2D" parent="."]
+position = Vector2(478, -253)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma9"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma9/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma10" type="StaticBody2D" parent="."]
+position = Vector2(331, -301)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma10"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma10/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma11" type="StaticBody2D" parent="."]
+position = Vector2(170, -348)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma11"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma11/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma12" type="StaticBody2D" parent="."]
+position = Vector2(26, -389)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma12"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma12/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma13" type="StaticBody2D" parent="."]
+position = Vector2(179, -443)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma13"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma13/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma14" type="StaticBody2D" parent="."]
+position = Vector2(415, -508)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma14"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma14/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma15" type="StaticBody2D" parent="."]
+position = Vector2(411, -417)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma15"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma15/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma16" type="StaticBody2D" parent="."]
+position = Vector2(620, -462)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma16"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma16/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma17" type="StaticBody2D" parent="."]
+position = Vector2(798, -501)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma17"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma17/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma18" type="StaticBody2D" parent="."]
+position = Vector2(945, -439)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma18"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma18/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma19" type="StaticBody2D" parent="."]
+position = Vector2(780, -348)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma19"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma19/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma20" type="StaticBody2D" parent="."]
+position = Vector2(945, -280)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma20"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma20/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma21" type="StaticBody2D" parent="."]
+position = Vector2(862, -213)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma21"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma21/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma22" type="StaticBody2D" parent="."]
+position = Vector2(995, -144)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma22"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma22/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma23" type="StaticBody2D" parent="."]
+position = Vector2(858, -77)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma23"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma23/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="plataforma24" type="StaticBody2D" parent="."]
+position = Vector2(993, -13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plataforma24"]
+position = Vector2(77, 624)
+shape = SubResource("RectangleShape2D_sugp2")
+debug_color = Color(0.61214, 0.537126, 0.0787278, 0.42)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="plataforma24/CollisionShape2D"]
+offset_left = -74.0
+offset_top = -11.5
+offset_right = 76.0
+offset_bottom = 9.5
+texture = ExtResource("3_sugp2")
+region_rect = Rect2(0, 143, 64, 11)
+metadata/_edit_use_anchors_ = true
+
+[node name="Enemigo" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(184, 566)
+
+[node name="Enemigo2" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(249, 412)
+
+[node name="Enemigo3" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(458, 409)
+
+[node name="Enemigo4" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(158, 214)
+
+[node name="Enemigo5" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(469, 187)
+
+[node name="Enemigo6" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(833, 255)
+
+[node name="Enemigo7" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(1032, 163)
+
+[node name="Enemigo8" parent="." instance=ExtResource("4_jyhfs")]
+position = Vector2(1114, 459)

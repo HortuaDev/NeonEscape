@@ -30,7 +30,11 @@ func _physics_process(delta):
 	else:
 		animated_sprite.play("idle")
 	
-	print("pos:", position, " vel:", velocity, " suelo:", is_on_floor())
-	
+	# Detectar si tocamos un enemigo
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider().name == "Enemigo":
+			# Por ahora solo imprimimos, luego añadimos la lógica de muerte
+			print("¡Tocado por enemigo!")
 	# Aplicar movimiento con colisiones
 	move_and_slide()

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ci1c0ejq0d1sb" path="res://assets/sprites/industrial.v1.png" id="2_qhqgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(9, 12)
+size = Vector2(9, 14)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
 atlas = ExtResource("2_qhqgy")
@@ -152,7 +152,7 @@ shape = SubResource("RectangleShape2D_dqkch")
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_i4ail")
 animation = &"fall"
-frame_progress = 0.762043
+frame_progress = 0.756606
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
