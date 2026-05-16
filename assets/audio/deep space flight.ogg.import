@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://q2qgg1rw7npd"
+path="res://.godot/imported/deep space flight.ogg-c1d505982695ae2680626b5a4c98fa44.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/deep space flight.ogg"
+dest_files=["res://.godot/imported/deep space flight.ogg-c1d505982695ae2680626b5a4c98fa44.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
