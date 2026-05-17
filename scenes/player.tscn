@@ -1,7 +1,11 @@
-[gd_scene load_steps=21 format=3 uid="uid://wfb6tn6tcwa5"]
+[gd_scene load_steps=25 format=3 uid="uid://wfb6tn6tcwa5"]
 
 [ext_resource type="Script" uid="uid://dwl4jjvc7bowa" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://ci1c0ejq0d1sb" path="res://assets/sprites/industrial.v1.png" id="2_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://ep14crnern3j" path="res://assets/audio/sonido_salto.wav" id="3_qhqgy"]
+[ext_resource type="AudioStream" uid="uid://bctabiiii4sbk" path="res://assets/audio/pasos_personaje.wav" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://bb30wgdi2jbci" path="res://assets/audio/sonido_personaje_herido.mp3" id="5_tuyoq"]
+[ext_resource type="AudioStream" uid="uid://cpmnestsbhi37" path="res://assets/audio/sonido_caida_aterrizaje.wav" id="6_fjrip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(9, 14)
@@ -160,3 +164,19 @@ limit_right = 1152
 limit_bottom = 646
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
+
+[node name="SonidoSalto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qhqgy")
+volume_db = -20.0
+
+[node name="SonidoPasos" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dqkch")
+volume_db = -20.0
+
+[node name="SonidoHerido" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_tuyoq")
+volume_db = -20.0
+
+[node name="SonidoAterrizaje" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_fjrip")
+volume_db = -20.0

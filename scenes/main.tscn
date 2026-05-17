@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bgbxgfqyodg0"]
+[gd_scene load_steps=14 format=3 uid="uid://bgbxgfqyodg0"]
 
 [ext_resource type="Texture2D" uid="uid://di26vagfutqke" path="res://assets/sprites/fondo.png" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://wfb6tn6tcwa5" path="res://scenes/player.tscn" id="1_o5qli"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://cro5cy38clin0" path="res://scripts/hud.gd" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://dbcbsf1kh85uv" path="res://scenes/item.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b8pf7d7qlt20d" path="res://scenes/puerta.tscn" id="7_o6xl0"]
+[ext_resource type="AudioStream" uid="uid://q2qgg1rw7npd" path="res://assets/audio/deep space flight.ogg" id="10_choun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tipki"]
 size = Vector2(1152, 1)
@@ -575,3 +576,8 @@ position = Vector2(1153, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ParedDerecha"]
 position = Vector2(-0.5, 323)
 shape = SubResource("RectangleShape2D_85g3d")
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_choun")
+autoplay = true
+parameters/looping = false

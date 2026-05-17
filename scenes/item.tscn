@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbcbsf1kh85uv"]
+[gd_scene load_steps=7 format=3 uid="uid://dbcbsf1kh85uv"]
 
 [ext_resource type="Script" uid="uid://dw1b66d5mu1h1" path="res://scripts/item.gd" id="1_s8enn"]
 [ext_resource type="Texture2D" uid="uid://ci1c0ejq0d1sb" path="res://assets/sprites/industrial.v1.png" id="2_6muww"]
+[ext_resource type="AudioStream" uid="uid://cccwwe5n5q50" path="res://assets/audio/recolectar_moneda_2.wav" id="3_6muww"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vljjh"]
 atlas = ExtResource("2_6muww")
@@ -30,3 +31,7 @@ animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_d265e")
+
+[node name="SonidoRecolectar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6muww")
+volume_db = -30.0
