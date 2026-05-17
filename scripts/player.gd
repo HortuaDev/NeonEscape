@@ -3,7 +3,13 @@ extends CharacterBody2D
 const SPEED = 150.0
 const JUMP_VELOCITY = -350.0
 
+var spawn_position = Vector2.ZERO
+
 @onready var animated_sprite = $AnimatedSprite2D
+
+func _ready():
+	spawn_position = position
+	add_to_group("player")
 
 func _physics_process(delta):
 	if not is_on_floor():

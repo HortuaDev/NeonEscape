@@ -152,7 +152,6 @@ shape = SubResource("RectangleShape2D_dqkch")
 position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_i4ail")
 animation = &"fall"
-frame_progress = 0.756606
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0

@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-	$VBoxContainer/LabelPuntos.text = "Puntos: " + str(GameManager.puntos)
-	$VBoxContainer/BotonMenu.pressed.connect(_on_menu)
+	$LabelPuntos.text = str(GameManager.puntos) + " PTS"
+	$BotonMenu.pressed.connect(_on_menu)
 
 func _on_menu():
 	GameManager.reiniciar()

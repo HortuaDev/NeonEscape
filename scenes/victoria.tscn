@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dlou7g8d7p1kv"]
+[gd_scene load_steps=4 format=3 uid="uid://dlou7g8d7p1kv"]
 
 [ext_resource type="Script" uid="uid://c71xhfm0eohh5" path="res://scripts/victoria.gd" id="1_imn5x"]
+[ext_resource type="Texture2D" uid="uid://hikptcmj21tm" path="res://assets/sprites/has_escapado_1.png" id="2_iw5au"]
+[ext_resource type="Texture2D" uid="uid://seur6m04u0eb" path="res://assets/sprites/menu_principal_1.png" id="3_dsxom"]
 
 [node name="Victoria" type="Control"]
 layout_mode = 3
@@ -15,24 +17,35 @@ script = ExtResource("1_imn5x")
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0.0509804, 0.0509804, 0.101961, 1)
+color = Color(0.101961, 0.101961, 0.180392, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 333.0
-offset_top = 67.0
-offset_right = 833.0
-offset_bottom = 567.0
-alignment = 1
+offset_left = 351.0
+offset_top = 80.0
+offset_right = 801.0
+offset_bottom = 330.0
+texture = ExtResource("2_iw5au")
+expand_mode = 1
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "¡HAS ESCAPADO!"
+[node name="LabelPuntos" type="Label" parent="."]
+offset_left = 476.0
+offset_top = 370.0
+offset_right = 676.0
+offset_bottom = 425.0
+theme_override_colors/font_color = Color(0.984314, 0.666667, 0.933333, 1)
+theme_override_colors/font_shadow_color = Color(0.862924, 0, 0.291838, 1)
+theme_override_colors/font_outline_color = Color(0.227451, 0.0470588, 0.168627, 1)
+theme_override_font_sizes/font_size = 40
+text = "0 PTS"
 horizontal_alignment = 1
 
-[node name="LabelPuntos" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="BotonMenu" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Volver al Menú"
+[node name="BotonMenu" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 500.0
+offset_right = 676.0
+offset_bottom = 567.0
+texture_normal = ExtResource("3_dsxom")
+ignore_texture_size = true
+stretch_mode = 0
